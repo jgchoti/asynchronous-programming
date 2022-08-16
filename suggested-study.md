@@ -1,5 +1,7 @@
 # Suggested Study
 
+- [Async JS Course by freecodecamp.org](https://www.youtube.com/watch?v=ZYb_ZU8LNxs&amp;ab_channel=freeCodeCamp.org)
+
 ## The Event Loop
 
 - [Coding Nomad](https://www.youtube.com/watch?v=5YcMKYTZZvk) - short clear example
@@ -15,6 +17,8 @@
 
 ## Callbacks, Promises, Async
 
+- setInterval
+  - [setInterval explained in 5 minutes](https://www.youtube.com/watch?v=GhePFBkdNYk&amp;ab_channel=CodewithAniaKub%C3%B3w)
 - References
   - [Coding Train](https://www.youtube.com/watch?v=QO4NXhWo_NM&list=PLRqwX-V7Uu6bKLPQvPRNNE65kBL62mVfx)
   - [Dev Ed](https://www.youtube.com/watch?v=_8gHHBlbziw)

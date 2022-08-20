@@ -9,8 +9,7 @@ const { log } = labeledLogger();
 /**
  *
  */
-const usernameAndEmail = (id) => fetchUserById(id).then(user =>`${id}. ${user.username}, ${user.email}`);
- 
+const usernameAndEmail = () => {};
 
 // --- test function ---
 

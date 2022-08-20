@@ -26,7 +26,7 @@ describe('userWorksAt checks if a user works at a specific company', () => {
   });
   it('user 6 does work at Considine-Lockman', () => {
     return userWorksAt(6, 'Considine-Lockman').then((actual) => {
-      expect(actual).toEqual(false);
+      expect(actual).toEqual(true);                                            // Correct value is true not false
     });
   });
   it('user 7 does not work at John Groups', () => {

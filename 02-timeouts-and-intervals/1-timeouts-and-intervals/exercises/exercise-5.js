@@ -8,7 +8,11 @@ const sortArray = (unsorted, sorted) => {
     //  for each item creat a timeout
     //    in the timeout callback, push the item into `sorted`
     //    the timeout should delay for item.charCodeAt()
+    unsorted.forEach(item => {
+        setTimeout(() => sorted.push(item), item.charCodeAt() * 10); 
+    });
 };
+
 
 // can you figure out why the tests pass in the order they do?
 // is it possible for a test never to finish?

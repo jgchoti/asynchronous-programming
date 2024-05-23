@@ -12,8 +12,8 @@ import { ORIGIN } from '../config.js';
 export const evolutionChain = async (chainId = 1) => {
     // --- generate and declare your resource's URL ---
     // docs: https://pokeapi.co/docs/v2#evolution-section
-    const URL = _;
-
+    const URL = `${ORIGIN}/evolution-chain/${chainId}`;
+    
     // --- fetch the API data (this works!) ---
     const encodedURL = encodeURI(URL);
     const response = await fetch(encodedURL);
@@ -32,8 +32,28 @@ export const evolutionChain = async (chainId = 1) => {
     // --- process the fetched data (if necessary) ---
     //  you do not need to use `await` below this comment
     //  you can refactor this to a separate logic function and test it
-    _; // tricky one!  you will need to push all the species into an array
-
+    ; // tricky one!  you will need to push all the species into an array
+    let output =[]
+    const species = (data) => {
+        if (data) {
+        let pokemon = {
+            name: data.species.name,
+            url: data.species.url,
+        }
+        output.push(pokemon);
+        if (data.evolves_to.length > 0) {
+            for (const evolution of data.evolves_to) {
+                species(evolution);
+            }
+    }
+        }}
     // --- return the final data ---
-    return pokemon;
+    species(data.chain);
+    return output
 };
+
+evolutionChain(7)
+    .then((data) => console.log(7, data))
+    .catch((err) => console.log(7, err));
+
+

@@ -38,16 +38,22 @@ const handleRejection = (rejection) => {
 
 // --- use the callbacks ---
 
-log('fetching user 1');
+log('fetching user 1'); //1
 fetchUserById(1)
     // log the parsed user object
     .then(logUser)
     // catch any errors in the network or the response
-    .catch(handleRejection);
+    .catch(handleRejection); //4
 
-log('fetching user 12 (there are only 10 users!)');
+log('fetching user 12 (there are only 10 users!)');//2
 fetchUserById(12)
     .then((user) => logUser(user))
-    .catch((err) => handleRejection(err));
+    .catch((err) => handleRejection(err)); //5
 
-log('= = = =  the call stack is empty  = = = =');
+// log('fetching user 7');
+// fetchUserById(7)
+//   .then((user) => logUser(user))
+//   .catch((err) => handleRejection(err)); 
+
+
+log('= = = =  the call stack is empty  = = = =');//3

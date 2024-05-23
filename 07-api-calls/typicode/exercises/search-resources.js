@@ -1,4 +1,8 @@
 import { ORIGIN } from '../config.js';
+import { labeledLogger } from '../../../lib/labeled-logger.js';
+
+
+const { log } = labeledLogger();
 
 /**
  * Fetches all the resources matching a specific search query.
@@ -13,8 +17,8 @@ import { ORIGIN } from '../config.js';
 export const searchResources = async (resourceType = '', searchQuery = '') => {
     // --- declare your resource's URL ---
     // hint: https://github.com/typicode/json-server#full-text-search
-    const URL = _;
-
+    const URL = `${ORIGIN}/${resourceType}?q=${searchQuery}`;
+    log(URL) 
     // --- fetch the API data (this works!) ---
     const encodedURL = encodeURI(URL);
     const response = await fetch(encodedURL);
@@ -33,3 +37,5 @@ export const searchResources = async (resourceType = '', searchQuery = '') => {
     // --- return the final data ---
     return data;
 };
+
+searchResources('users', '.net')

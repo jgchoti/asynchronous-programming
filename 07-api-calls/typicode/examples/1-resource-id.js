@@ -46,19 +46,19 @@ const fetchById = async (resourceType = '', id = 0) => {
 // --- fetch and log the data ---
 
 fetchById('albums', '1')
-    .then((data) => log('/albums/1', data))
+    .then((data) => log('/albums/1', data)) //6
     .catch((err) => log('/albums/1', err));
 
 fetchById('albums', '4')
-    .then((data) => log('/albums/4', data))
+    .then((data) => log('/albums/4', data)) //7
     .catch((err) => log('/albums/4', err));
 
 fetchById('comments', '2')
-    .then((data) => log('/comments/2', data))
+    .then((data) => log('/comments/2', data)) //8
     .catch((err) => log('/comments/2', err));
 
 fetchById('comments', '4')
-    .then((data) => log('/comment/4', data))
+    .then((data) => log('/comment/4', data)) //9
     .catch((err) => log('/comment/4', err));
 
-log('= = = =  the call stack is empty  = = = =');
+log('= = = =  the call stack is empty  = = = ='); //5

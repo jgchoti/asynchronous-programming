@@ -48,19 +48,19 @@ const fetchPathsQueries = async (params = [], limit = 1) => {
 // --- fetch and log the data ---
 
 fetchPathsQueries(['users'], 3)
-    .then((data) => log('/users?_limit=3', data))
+    .then((data) => log('/users?_limit=3', data)) //6
     .catch((err) => log('/users?_limit=3', err));
 
 fetchPathsQueries(['comments'], 5)
-    .then((data) => log('/comments?_limit=5', data))
+    .then((data) => log('/comments?_limit=5', data)) //8
     .catch((err) => log('/comments?_limit=5', err));
 
 fetchPathsQueries(['users', '3', 'posts'], 6)
-    .then((data) => log('/users/3/posts?_limit=6', data))
+    .then((data) => log('/users/3/posts?_limit=6', data)) //7
     .catch((err) => log('/users/3/posts?_limit=6', err));
 
 fetchPathsQueries(['albums', '6', 'photos'], 2)
-    .then((data) => log('/albums/6/photos?_limit=2', data))
+    .then((data) => log('/albums/6/photos?_limit=2', data)) //9
     .catch((err) => log('/albums/6/photos?_limit=2', err));
 
-log('= = = =  the call stack is empty  = = = =');
+log('= = = =  the call stack is empty  = = = ='); //5

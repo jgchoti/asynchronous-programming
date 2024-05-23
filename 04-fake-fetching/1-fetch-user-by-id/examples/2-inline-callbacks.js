@@ -11,19 +11,19 @@ const { log, error } = labeledLogger();
 
 // --- fetch users ---
 
-log('fetching user 1');
+log('fetching user 1'); //1
 fetchUserById(1)
-    .then((user) => log(user))
+    .then((user) => log(user)) //5
     .catch((err) => error(err));
 
-log('fetching user 5');
+log('fetching user 5'); //2
 fetchUserById(5)
-    .then((user) => log(user))
+    .then((user) => log(user)) // 7
     .catch((err) => error(err));
 
-log('fetching user 10');
+log('fetching user 10'); //3
 fetchUserById(10)
-    .then((user) => log(user))
+    .then((user) => log(user)) //6
     .catch((err) => error(err));
 
-log('= = = =  the call stack is empty  = = = =');
+log('= = = =  the call stack is empty  = = = ='); //4

@@ -1,4 +1,4 @@
-import { labeledLogger } from '../../../lib/labeled-logger.js';
+import { labeledLogger } from '../../lib/labeled-logger.js';
 
 const { log, error } = labeledLogger();
 
@@ -40,7 +40,7 @@ new Promise((resolve) => {
 // rejected promise
 new Promise((resolve, reject) => {
     log('reject executor'); // 2
-    reject('no success:(');
+    reject('no success :(');
 })
     .then((val) => logFulfilledValue(val))
     .catch((val) => logRejectedValue(val)); // 6

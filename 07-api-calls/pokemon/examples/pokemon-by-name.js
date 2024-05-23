@@ -35,21 +35,27 @@ const pokemonByName = async (name = '') => {
     const data = await response.json();
 
     // --- return the final data ---
-    return data;
+    console.log(data) ;
 };
 
 // --- fetch and log the data ---
 
-pokemonByName('pikachu')
-    .then((data) => log('pikachu', data))
-    .catch((err) => log('pikachu', err));
+// pokemonByName('ttt')
+//     .then((data) => log('ttt', data))
+//     .catch((err) => log('ttt', err));
 
-pokemonByName('mew')
-    .then((data) => log('mew', data))
-    .catch((err) => log('mew', err));
+// pokemonByName('mew')
+//     .then((data) => log('mew', data))
+//     .catch((err) => log('mew', err));
 
-pokemonByName('lickitung')
-    .then((data) => log('lickitung', data))
-    .catch((err) => log('lickitung', err));
+// pokemonByName('lickitung')
+//     .then((data) => log('lickitung', data))
+//     .catch((err) => log('lickitung', err));
 
 log('= = = =  the call stack is empty  = = = =');
+
+ try {
+     await pokemonByName('yy')
+ } catch {
+    throw ('not found')
+ }

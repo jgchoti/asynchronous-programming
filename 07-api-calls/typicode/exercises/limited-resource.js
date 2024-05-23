@@ -1,5 +1,8 @@
 import { ORIGIN } from '../config.js';
+// import { labeledLogger } from '../../../lib/labeled-logger.js';
 
+
+// const { log } = labeledLogger();
 /**
  * Fetches a certain number of entries from one resource type.
  *
@@ -12,8 +15,8 @@ import { ORIGIN } from '../config.js';
  */
 export const limitedResource = async (resourceType = '', limit = 1) => {
     // --- generate and declare your resource's URL ---
-    const URL = _;
-
+    const URL = `${ORIGIN}/${resourceType}?_limit=${limit}`
+    // log(URL);
     // --- fetch the API data (this works!) ---
     const encodedURL = encodeURI(URL);
     const response = await fetch(encodedURL);
@@ -32,3 +35,5 @@ export const limitedResource = async (resourceType = '', limit = 1) => {
     // --- return the final data ---
     return data;
 };
+
+limitedResource('photos', 3)

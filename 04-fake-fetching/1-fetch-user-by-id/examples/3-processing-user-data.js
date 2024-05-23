@@ -18,25 +18,25 @@ const createIntroduction = (user) => {
 
 // --- use the callbacks ---
 
-log('fetching user 1');
+log('fetching user 1');//1
 fetchUserById(1)
     .then((user) => createIntroduction(user))
     // "1: Hello, my name is Leanne Graham"
-    .then((intro) => log(intro))
+    .then((intro) => log(intro)) //7
     .catch((err) => error(err));
 
-log('fetching user 5');
+log('fetching user 5'); //2
 fetchUserById(5)
     .then((user) => createIntroduction(user))
     // 51: Hello, my name is Chelsey Dietrich"
-    .then((intro) => log(intro))
+    .then((intro) => log(intro)) //6
     .catch((err) => error(err));
 
-log('fetching user 12 (there are only 10 users!)');
+log('fetching user 12 (there are only 10 users!)'); //3
 fetchUserById(12)
     .then(createIntroduction)
     .then((intro) => log(intro))
     // 404
-    .catch((err) => error(err));
+    .catch((err) => error(err)); //5
 
-log('= = = =  the call stack is empty  = = = =');
+log('= = = =  the call stack is empty  = = = ='); //4

@@ -28,12 +28,12 @@ const wrapInPromise = async (value) => {
 
 // --- test the async function ---
 
-log('passing "hello" to async function');
+log('passing "hello" to async function'); //1
 const helloPromise = wrapInPromise('hello');
-helloPromise.then((val) => log(val));
+helloPromise.then((val) => log(val)); //4
 
-log('passing "good bye" to async function');
+log('passing "good bye" to async function'); //2
 const goodByePromise = wrapInPromise('good bye');
-goodByePromise.then((val) => log(val));
+goodByePromise.then((val) => log(val)); // 5
 
-log('= = = =  the call stack is empty  = = = =');
+log('= = = =  the call stack is empty  = = = ='); //3

@@ -9,7 +9,15 @@ const { log } = labeledLogger();
 /**
  *
  */
-const userWorksAt = () => {};
+const userWorksAt = (id, company) => {
+
+    const isWork = (user) => {
+        return user.company.name === company
+    }
+    const resolvesData = fetchUserById(id).then(isWork)
+    return resolvesData
+}
+
 
 // --- test function ---
 

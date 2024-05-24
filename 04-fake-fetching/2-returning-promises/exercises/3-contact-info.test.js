@@ -9,7 +9,22 @@ const { log } = labeledLogger();
 /**
  *
  */
-const contactInfo = () => {};
+
+
+
+// [
+//     'Nathan@yesenia.net',
+//     '1-463-123-4447',
+//     'ramiro.info',
+// ]
+const contactInfo = (id) => {
+    const handleData = (user) => {
+       return [user.email, user.phone, user.website]
+    }
+    const result = fetchUserById(id).then(handleData)
+    return result
+}
+
 
 // --- test function ---
 

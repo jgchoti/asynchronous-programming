@@ -1,9 +1,10 @@
 import { apiService } from '../api-calls/api-service.js';
 import { state } from '../data/state.js';
-
+import { renderPost } from '../components/render-post.js';
 export const userInputHandler = async (event) => {
+    const rootEl = document.getElementById('root')
     const postId = event.target.form.postId.value;
-    console.log(postId);
+    // console.log(postId);
 
     try {
         const postPromise = apiService('posts', postId);
@@ -18,9 +19,9 @@ export const userInputHandler = async (event) => {
         state.comments = comments;
         console.log(state);
 
-        // const postElement = renderAlbum(album, photos);
+        const postElement = renderPost(post, comments);
 
-        // root.appendChild(albumElement);
+        rootEl.appendChild(postElement);
     } catch (err) {
         console.error(err);
     }

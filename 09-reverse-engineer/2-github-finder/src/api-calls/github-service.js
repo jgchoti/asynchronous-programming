@@ -15,5 +15,6 @@ export const gitHubService = async (userName = '') => {
     }
 
     const result = await response.json();
+
     return result
 };

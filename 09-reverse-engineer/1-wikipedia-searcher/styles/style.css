@@ -70,6 +70,7 @@
     margin-bottom: 10px;
     font-size: 20px;
 }
+
 .wrapper .app #output .row button {
     cursor: pointer;
     height: 40px;
@@ -77,6 +78,7 @@
     font-size: 15px;
     border: 1px solid blue;
 }
+
 .wrapper .app #output .row button:hover {
     background-color: blue;
     color: white;
@@ -88,4 +90,23 @@
     padding: 10px;
     background-color: aliceblue;
     text-align: center;
+}
+
+.suggest-search {
+    cursor: pointer;
+    height: auto;
+    padding: 8px;
+    width: 120px;
+    font-size: 15px;
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+    margin-right: 8px;
+    border-radius: 15px;
+    text-overflow: ellipsis ' [..]';
+}
+
+.suggest-search:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }

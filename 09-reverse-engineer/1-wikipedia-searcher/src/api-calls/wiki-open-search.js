@@ -1,21 +1,18 @@
 import { ORIGIN } from '../../config.js';
 
-export const wikiService = async (searchTerm = '') => {
+export const wikiOpenSearch = async (searchTerm = '') => {
     // console.log(searchTerm)
-    let api_call = {
-        action: 'query',
-        list: 'search',
-        prop: 'info',
-        inprop: 'url',
-        utf8: "",
-        format: 'json',
+    let params = {
+        action: "opensearch",
+        format: "json",
+        limit: "6",
         origin: '*',
-        srlimit: '50',
-        srsearch: searchTerm
-    }
+        search: searchTerm
+    };
+
     let URL = `${ORIGIN}`
-    for (const key in api_call) {
-        URL += `&${key}=${api_call[key]}`
+    for (const key in params) {
+        URL += `&${key}=${params[key]}`
     }
     // console.log(URL)
 
@@ -30,3 +27,5 @@ export const wikiService = async (searchTerm = '') => {
     console.log(URL)
     return result
 };
+
+

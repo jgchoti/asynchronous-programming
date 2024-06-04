@@ -1,3 +1,5 @@
-import { userInputListener } from "./listeners/user-input-listener.js";
+import { btnListener, inputListener } from "./listeners/user-input-listener.js";
 
-userInputListener('submit-btn')
+
+btnListener('submit-btn')
+inputListener('submit-btn')
